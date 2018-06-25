@@ -107,6 +107,9 @@ Host: contactsmanagement.azurewebsites.net
 Accept: text/json
 Authorization: Basic Y211c2VyOmV2b2xlbnQ=
 
+
+
+
 Testing Failure Criteria:
 -------------------------
 1) Datamodel validation. This request returns a ModelState object with a summary of all the validation errors:
