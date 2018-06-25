@@ -39,16 +39,16 @@ You can make the following calls listed below to test the API. Please note: I ha
 So, you will need to pass 'Authorization: Basic Y211c2VyOmV2b2xlbnQ=' in the header of the HTTP requests, otherwise the API will return 401 Unauthorized error. 
 The parameter contains a username and password combination which is Base 64 encoded.
 
-GET All Contacts Request:
--------------------------
+1) GET All Contacts Request:
+-----------------------------
 http://contactsmanagement.azurewebsites.net/api/Contacts
 User-Agent: Fiddler
 Host: contactsmanagement.azurewebsites.net
 Accept: text/json
 Authorization: Basic Y211c2VyOmV2b2xlbnQ=
 
-GET Specific Contact Request (with ID=5):
------------------------------------------
+2) GET Specific Contact Request (with ID=5):
+--------------------------------------------
 http://contactsmanagement.azurewebsites.net/api/Contacts/5
 
 Request Header:
@@ -60,14 +60,14 @@ Authorization: Basic Y211c2VyOmV2b2xlbnQ=
 ------------------------------------------------------------------------------------------------------------------------
 
 
-POST (To add a Contact):
--------------------------
+3) POST (To add a Contact):
+----------------------------
 http://contactsmanagement.azurewebsites.net/api/Contacts
 
 Request Header:
 ------------------
 User-Agent: Fiddler
-Host: localhost
+Host: contactsmanagement.azurewebsites.net
 Accept: text/json
 Content-Type: text/json
 Authorization: Basic Y211c2VyOmV2b2xlbnQ=
@@ -78,7 +78,7 @@ Request body:
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
-PUT (To edit a contact/Inactivate a contact with ID=8):
+4) PUT (To edit a contact/Inactivate a contact with ID=8):
 ------------------------------------------------------------
 http://contactsmanagement.azurewebsites.net/api/Contacts/8
 
@@ -96,8 +96,8 @@ Request body:
 {"ContactID":"8","FirstName":"Gary","LastName":"Cohen","Email":"gcohen@yahoo.com","PhoneNumber":"476-877-9989","Status":"Inactive"}
 -------------------------------------------------------------------------------------------------------------------------------------------
 
-DELETE (To delete a contact with ID=6):
-----------------------------------------
+5) DELETE (To delete a contact with ID=6):
+-------------------------------------------
 http://contactsmanagement.azurewebsites.net/api/Contacts/6
 
 Request Header:
@@ -107,4 +107,45 @@ Host: contactsmanagement.azurewebsites.net
 Accept: text/json
 Authorization: Basic Y211c2VyOmV2b2xlbnQ=
 
+Testing Failure Criteria:
+-------------------------
+1) Datamodel validation. This request returns a ModelState object with a summary of all the validation errors:
+----------------------------------------------------------------------------------------------------------------
+POST
+-----
+Request Header:
+---------------
+http://contactsmanagement.azurewebsites.net/api/Contacts
+User-Agent: Fiddler 
+Host: contactsmanagement.azurewebsites.net
+Accept: text/json 
+Content-Type: text/json 
+Authorization: Basic Y211c2VyOmV2b2xlbnQ=
+Content-Length: 104
 
+Request Body:
+-------------
+{"FirstName":"","LastName":"P","Email":"drake#yahoo.com","PhoneNumber":"456-abc-9989","Status":"Active"}
+
+2) Authentication Credentials not passed in request header
+------------------------------------------------------------
+DELETE:
+Request Header:
+http://contactsmanagement.azurewebsites.net/api/Contacts/100
+
+Request Body:
+User-Agent: Fiddler 
+Host: contactsmanagement.azurewebsites.net
+Accept: text/json
+
+3) Resource not found (Attempting to delete a resourse that does not exist):
+-----------------------------------------------------------------------------
+DELETE:
+-------
+Request Header:
+----------------
+http://contactsmanagement.azurewebsites.net/api/Contacts/100
+User-Agent: Fiddler 
+Host: contactsmanagement.azurewebsites.net
+Accept: text/json
+Authorization: Basic Y211c2VyOmV2b2xlbnQ=
