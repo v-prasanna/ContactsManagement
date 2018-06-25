@@ -9,6 +9,7 @@
 
 namespace ContactsDBDataAccess
 {
+    //Data validation has been added by using Attributes on various properties of this model.
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;

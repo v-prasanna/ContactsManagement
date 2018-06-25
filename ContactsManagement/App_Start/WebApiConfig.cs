@@ -27,6 +27,7 @@ namespace ContactsManagement
                 defaults: new { id = RouteParameter.Optional }
             );
 
+            //Add the Basic Authentication filter that was set up in Security\BasicAuthenticationAttribute.cs
             config.Filters.Add(new BasicAuthenticationAttribute());
         }
     }

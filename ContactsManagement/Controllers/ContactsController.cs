@@ -29,6 +29,7 @@ namespace ContactsManagement.Controllers
         {
             try
             {
+                //Verify if the resource exists.
                 Contact contact = _contactRepository.Get(id);
 
                 if (contact == null)
@@ -47,6 +48,7 @@ namespace ContactsManagement.Controllers
         {
             try
             {
+                //Checked if the model is valid.
                 if (ModelState.IsValid)
                 {
                     _contactRepository.Insert(contact);
