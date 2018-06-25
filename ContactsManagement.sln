@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsManagement", "ContactsManagement\ContactsManagement.csproj", "{D2E5ED26-64D9-4514-972C-7642C1B1C9F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsDBDataAccess", "ContactsDBDataAccess\ContactsDBDataAccess.csproj", "{057629C9-B17F-4F4F-BE4D-98C7971A0307}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2E5ED26-64D9-4514-972C-7642C1B1C9F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2E5ED26-64D9-4514-972C-7642C1B1C9F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2E5ED26-64D9-4514-972C-7642C1B1C9F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2E5ED26-64D9-4514-972C-7642C1B1C9F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{057629C9-B17F-4F4F-BE4D-98C7971A0307}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{057629C9-B17F-4F4F-BE4D-98C7971A0307}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{057629C9-B17F-4F4F-BE4D-98C7971A0307}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{057629C9-B17F-4F4F-BE4D-98C7971A0307}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59D657F2-9515-4C48-A506-23910ADC9BDC}
+	EndGlobalSection
+EndGlobal
